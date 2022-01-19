@@ -1,12 +1,17 @@
 package Textos;
 
-enum Vocales {a,e,i,o,u,á, é, í, ó,ú,ü}
+//enum Vocales {a,e,i,o,u,á, é, í, ó,ú,ü}
 
 public class Texto {
+    /**
+     * variable estática con todas las vocales posibles
+      */
     static final String VOCALES ="aeiouáéíóúü";
+
     private String texto="";
 //la declaramos final para que no varíe el tamaño una vez que lo hayamos declarado
-    private int tamañoMax=0;
+    private final int tamañoMax;
+
      //Constructor con longitud del texto
     public Texto (int tamañoMax){
         this.texto="";
@@ -67,7 +72,10 @@ public boolean esVocal(char c){
         if (VOCALES.indexOf(c)!=-1){
             resultado=true;
          }
+        Character caracter=c;
+
         return resultado;
+
 }
 //método getter
     public String getTexto(){
