@@ -1,20 +1,33 @@
 package Vehiculo.enumerado;
 
 public class Vehiculo {
-    enum MarcaDeVehiculo {BMW, MERCEDES, AVENSIS, TOYOTA, SEAT, NISSAN, AUDI, NO_CONOCIDO}
-
-    ;
+    /**
+     * La clase vehículo tiene dos atributos, la marca que es un enum MarcaDeVehiculo y la matricula que es un
+     * String
+     */
     private MarcaDeVehiculo marca;
     private String matricula;
-//constructores
+
+    //constructores
+
+    /**
+     * constructores por defecto. incluyo la impresión del resultado usando los métodos toString y name
+     */
 
     public Vehiculo() {
-        this.marca = MarcaDeVehiculo.NO_CONOCIDO;
+        this.marca = MarcaDeVehiculo.NO_CONOCIDA;
         this.matricula = "";
-        System.out.println(marca.name());
+//        System.out.println("el auto creado es de la marca");
+//        System.out.println(marca.name());
+//        System.out.println(marca.toString());
     }
 
-    //getter abd setter
+    //getter and setter
+
+    /**
+     * incluyo un switch para validar la marca del coche que tengo que modificar
+     * @param marca
+     */
     public void setMarcaString(String marca) {
         switch (marca) {
             case "audi":
@@ -39,7 +52,7 @@ public class Vehiculo {
                 this.marca = MarcaDeVehiculo.NISSAN;
                 break;
             default:
-                this.marca = MarcaDeVehiculo.NO_CONOCIDO;
+                this.marca = MarcaDeVehiculo.NO_CONOCIDA;
                 break;
         }
 
@@ -56,7 +69,7 @@ public class Vehiculo {
     public String  getMarcaString() {
 
 //        return marca.toString().toUpperCase();
-        var s = marca.name().toUpperCase();
+       String s = marca.name().toUpperCase();
         return s;
     }
 
@@ -68,6 +81,11 @@ public class Vehiculo {
 
    */
 
+    /**
+     * en este set no valido nada ya que el argumento es enum por lo que tiene un valor válido para la marca
+     * del coche
+     * @param marca
+     */
     public void setMarca(MarcaDeVehiculo marca) {
         this.marca=marca;
 
