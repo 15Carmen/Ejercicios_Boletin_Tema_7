@@ -11,7 +11,7 @@ public class Main {
 //creamos el tipo fecha Gregorian para tomar la fecha del día
         GregorianCalendar fechaHoy = new GregorianCalendar();
         int segundos = 0;
-//creamos la variable de teclado
+//creamos la variable de teclado para recoger posteriormente el número de segundos
         Scanner teclado = new Scanner(System.in);
 // swith para controlar si han introducido un valor válido de minutos
         boolean válido = false;

@@ -7,18 +7,28 @@ public class Texto {
      * variable estática con todas las vocales posibles
       */
     static final String VOCALES ="aeiouáéíóúü";
-
-    private String texto="";
 //la declaramos final para que no varíe el tamaño una vez que lo hayamos declarado
     private final int tamañoMax;
+    private String texto="";
 
      //Constructor con longitud del texto
     public Texto (int tamañoMax){
         this.texto="";
         this.tamañoMax= tamañoMax;
     }
-    //añadir un carácter al principio si hay espacio
-    public boolean añadirCaracterPpio(char c){
+    //método getter
+    public String getTexto(){
+        return this.texto;
+    }
+    /**
+     * método para añadir un carácter al inicio de la cadena si hay espacio
+     * precondicion: ninguna
+     * postcondicion. si el tamaño del texto es el máximo, no se puede añadir el carácter
+     * @param c. caracter a incluir al principio de la cadea
+     * @return booleano indicando si se ha podido realizar la acción
+     * el método compruebaa que la longitud del texto es menor al máximo y le añade el carácter
+     */
+        public boolean añadirCaracterPpio(char c){
         boolean resultado=false;
         if (this.texto.length()<this.tamañoMax) {
             this.texto = c + this.texto;
@@ -26,8 +36,17 @@ public class Texto {
         }
         return resultado;
     }
-    //añadir un carácter al final si hay espacio
-    public boolean añadirCaracterFinal(char c){
+
+    /**
+     * método para añadir un carácter al final de la cadena si hay espacio
+     * precondicion: ninguna
+     * postcondicion. si el tamaño del texto es el máximo, no se puede añadir el carácter
+     * @param c. caracter a incluir al final de la cadea
+     * @return booleano indicando si se ha podido realizar la acción
+     * el método compruebaa que la longitud del texto es menor al máximo y le añade el carácter
+     *
+     */
+        public boolean añadirCaracterFinal(char c){
         boolean resultado=false;
         if (this.texto.length()<this.tamañoMax) {
             this.texto = this.texto + c;
@@ -59,8 +78,7 @@ public class Texto {
     public int contarVocales() {
         int resultado = 0;
         for (int i = 0; i < this.texto.length(); i++) {
-
-            if (esVocal(texto.charAt(i))) {
+            if (esVocal(this.texto.charAt(i))) {
                 resultado++;
             }
               }
@@ -77,8 +95,5 @@ public boolean esVocal(char c){
         return resultado;
 
 }
-//método getter
-    public String getTexto(){
-        return this.texto;
-    }
+
 }
